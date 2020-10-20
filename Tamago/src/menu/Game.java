@@ -84,6 +84,7 @@ public class Game {
 		System.out.print("\n\n");
 		System.out.println("| Nom : " + myTama.getFirstName());
 		System.out.println("| Sexe : " + myTama.getGender());
+		System.out.println("| Status : " + myTama.getStatusAge());
 		System.out.println("| Couleur : " + myTama.getColor() + "\n");
 		System.out.println("| Vie : " + myTama.getHealth());
 		System.out.println("| Etat de santé : " + myTama.getHealthState());
@@ -124,7 +125,7 @@ public class Game {
 		System.out.println("(1)CROQUETTES");
 		System.out.println("(2)EAU");
 		System.out.println("(3)BONBON");
-		System.out.println("\t\t\t(4)RETOUR");
+		System.out.println("\t\t\t\t\t\t\t(4)RETOUR");
 	}
 
 	public static void chooseFeedingTime(Tamagotchi myTama) {
@@ -164,7 +165,7 @@ public class Game {
 	public static void menuActivities() {
 		System.out.println("(1)FAIRE DU SPORTS");
 		System.out.println("(2)PROMENADE");
-		System.out.println("\t\t\t(3)RETOUR");
+		System.out.println("\t\t\t\t\t\t\t(3)RETOUR");
 	}
 
 	public static void chooseActivities(Tamagotchi myTama) {
@@ -234,14 +235,14 @@ public class Game {
 		clearAndTitle();
 		menuEmpty();
 		menuRepose();
-		menuBotIn(2);
+		menuBotIn(6);
 		chooseRepose(myTama);
 	}
 
 	public static void menuRepose() {
 		System.out.println("(1)FAIRE UNE SIESTE");
 		System.out.println("(2)DORMIR");
-		System.out.println("\t\t\t(3)RETOUR");
+		System.out.println("\t\t\t\t\t\t\t(3)RETOUR");
 	}
 
 	public static void chooseRepose(Tamagotchi myTama) {
@@ -275,7 +276,7 @@ public class Game {
 		counterFriends = 0;
 		if (myTama.getFriends().size() == 0) {
 			System.out.println("La liste des amis est vide");
-			System.out.println("(1)RETOUR");
+			System.out.println("\t\t\t\t\t\t\t(1)RETOUR");
 		}
 		else {
 			notifFriend = false;
@@ -283,7 +284,7 @@ public class Game {
 				counterFriends++;
 				System.out.println("("+counterFriends+")"+friend.getFirstName().toUpperCase() +"/"+ friend.getType() +"/"+ friend.getGender());
 			};
-			System.out.println("("+ (myTama.getFriends().size()+1) +")RETOUR");
+			System.out.println("\t\t\t\t\t\t\t("+ (myTama.getFriends().size()+1) +")RETOUR");
 		}
 	}
 	
@@ -317,7 +318,7 @@ public class Game {
 			System.out.println("(1)METTRE LE MASQUE");
 		}
 		System.out.println("(2)TEINTURE");
-		System.out.println("\t\t\t(3)RETOUR");
+		System.out.println("\t\t\t\t\t\t\t(3)RETOUR");
 	}
 
 	public static void chooseCustom(Tamagotchi myTama) {
@@ -400,19 +401,16 @@ public class Game {
 	public static void menuBotIn(int x) {
 		System.out.println(separatorBold);
 		switch (x) {
-		case 1:
+		case 5:
 			System.out.println("  SOINS    ");
 			break;
-		case 2:
+		case 6:
 			System.out.println("  REPOS    ");
 			break;
-		case 3:
-			System.out.println("  LUMIERE    ");
+		case 7:
+			System.out.println("  AMIS    ");
 			break;
-		case 4:
-			System.out.println("  CARNET    ");
-			break;
-		case 5:
+		case 8:
 			System.out.println("  ACCESSOIRES    ");
 			break;
 		}
@@ -536,14 +534,14 @@ public class Game {
 		System.out.println("(2)BLEU");
 		System.out.println("(3)VERT");
 		System.out.println("(4)VIOLET");
-		System.out.println("\t\t\t(5)RETOUR");
+		System.out.println("\t\t\t\t\t\t\t(5)RETOUR");
 	}
 
 	public static void tincture(Tamagotchi myTama) {
 		clearAndTitle();
 		menuEmpty();
 		menuTincture(myTama);
-		menuBotIn(5);
+		menuBotIn(8);
 		chooseTincture(myTama);
 	}
 

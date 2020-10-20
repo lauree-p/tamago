@@ -43,7 +43,7 @@ public class MenuInit {
 	public static void type() {
 		System.out.println(separatorThin);
 		System.out.println("> Choisissez votre type de compagnon :\n");
-		System.out.println("- (1) : Chien\n- (2) : Chat");
+		System.out.println("- (1) : Chien (ALPHA Version) \n- (2) : Chat");
 		System.out.println(separatorThin);
 		
 	}
