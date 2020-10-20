@@ -146,13 +146,6 @@ public class Tamagotchi {
 		return relation;
 	}
 
-	/**
-	 * @param relation the relation to set
-	 */
-	public void setRelation(String relation) {
-		this.relation = relation;
-	}
-
 	private void setRelation() {
 		// TODO Auto-generated method stub
 
@@ -904,8 +897,7 @@ public class Tamagotchi {
 	}
 
 	public void findFriend() {
-		int random = (int) (Math.random() * 1);
-		System.out.println(random);
+		int random = (int) (Math.random() * 3);
 		if (random == 0) {
 			Tamagotchi newFriend = new Tamagotchi(null, null,null ,0);
 			this.friends.add(newFriend);

@@ -6,7 +6,6 @@ public class MyThread extends Thread {
 	
 	@Override
 	public void run() {
-		System.out.println("RUN OK");
 		for (int i = 0; Main.myTama.getHealth() != 0; i++ ) {
 
 			if (Main.myTama.isSick()) {
