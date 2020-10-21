@@ -27,4 +27,15 @@ public class Utils {
 			System.out.println();
 		}
 	}
+	
+	/**
+	 * 
+	 */
+	public static void loading() {
+		System.out.print("Chargement ");
+		for (int i =0 ; i < 4 ; i++) {
+			Utils.sleep(1000);
+			System.out.print(". ");
+		}
+	}
 }

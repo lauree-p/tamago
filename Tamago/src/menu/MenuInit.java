@@ -2,33 +2,48 @@ package menu;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import tamagotchi.Tamagotchi;
+import tamagotchi.Main;
 import tools.Clavier;
 import tools.Utils;
 
+/**
+ *Classe qui regroupe toute la partie de l'initialisation du jeu 
+ * @author Laurée
+ *
+ */
 public class MenuInit {
 	
-	
 	static String separatorThin = "------------------------------------------------------------------";
+	
 	static String separatorBold = "====================================================================";
 
-	public static void startInit(Tamagotchi myTama) {
+	/**
+	 * Permet de lancer le menu d'initialisation du nouveau Tamagotchi.
+	 * {@inheritdoc}  
+	 */
+	public static void startInit() {
 		Utils.clearConsole();
+		
 		title();
-		//Type
+		
 		type();
-		requestType(myTama);
-		replayType(myTama);
-		//Gender
-		gender(myTama);
-		//FirstName
-		firstName(myTama);
-		requestFirstName(myTama);
-		//
-		loading();
+		
+		requestType();
+		
+		replayType();
+		
+		gender();
+		
+		firstName();
+		
+		requestFirstName();
+		
+		Utils.loading();
 	}
 
+	/**
+	 * 
+	 */
 	public static void title() {
 		System.out.println("     _______                                _       _     _ ");
 		System.out.println("    |__   __|                              | |     | |   (_)");
@@ -40,6 +55,9 @@ public class MenuInit {
 		System.out.println("                                |___/                       \n");
 	}
 
+	/**
+	 * 
+	 */
 	public static void type() {
 		System.out.println(separatorThin);
 		System.out.println("> Choisissez votre type de compagnon :\n");
@@ -48,44 +66,73 @@ public class MenuInit {
 		
 	}
 	
-	public static int requestType(Tamagotchi myTama) {
+	/**
+	 * 
+	 * @return scType
+	 */
+	public static int requestType() {
 		int scType = Clavier.lireInt();
-		myTama.setType(scType);
+		
+		Main.myTama.setType(scType);
 		System.out.println(separatorThin);
+		
 		return scType;
 	}
 
-	public static void replayType(Tamagotchi myTama) {
-			System.out.println("Vous avez choisit un "+ myTama.getType());
+	/**
+	 * 
+	 */
+	public static void replayType() {
+			System.out.println("Vous avez choisit un "+ Main.myTama.getType());
 	}	
 	
-	public static void gender(Tamagotchi myTama) {
+	/**
+	 * 
+	 */
+	public static void gender() {
 		System.out.println(separatorThin);
-		//myTama.setGender();
-		if (myTama.getGender() == "Male") {
+
+		if (Main.myTama.getGender() == "Male") {
 			System.out.println("Félication ! C'est un male !");
 		} else {
 			System.out.println("Félication ! C'est une femelle !");
 		}
+		
 		System.out.println(separatorThin);
 	}
 	
-	public static void firstName(Tamagotchi myTama) {
-		System.out.println("Donnez un nom à votre " + myTama.getType() + " :");
+	/**
+	 * 
+	 */
+	public static void firstName() {
+		System.out.println("Donnez un nom à votre " + Main.myTama.getType() + " :");
 	}
 	
-	public static void requestFirstName(Tamagotchi myTama) {
+	/**
+	 * 
+	 */
+	public static void requestFirstName() {
 		String scFirstname;
+		
 		do {
 			scFirstname = Clavier.lireString();
 		} while (valideRequestFirstName(scFirstname) == false);
-		myTama.setFirstName(scFirstname.toUpperCase());
+		
+		Main.myTama.setFirstName(scFirstname.toUpperCase());
 	}
 
+	/**
+	 * 
+	 * @param scFirstname
+	 * @return valid
+	 */
 	public static boolean valideRequestFirstName(String scFirstname) {
 		String regex = "[a-zA-Z]{3,6}";
+		
 		Pattern pattern = Pattern.compile(regex);
+		
 		Matcher matcher = pattern.matcher(scFirstname);
+		
 		boolean valid = false;
 
 		if (matcher.find()) {
@@ -95,14 +142,8 @@ public class MenuInit {
 		} else {
 			valid = false;
 		}
+		
 		return valid;
 	}
-	
-	public static void loading() {
-		System.out.print("Chargement ");
-		for (int i =0 ; i < 4 ; i++) {
-			Utils.sleep(1000);
-			System.out.print(". ");
-		}
-	}
+
 }

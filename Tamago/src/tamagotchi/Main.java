@@ -10,7 +10,7 @@ public class Main {
 	
 	public static void main(String[] args) {
 
-		MenuInit.startInit(myTama);
+		MenuInit.startInit();
 		MyThread myThread = new MyThread();
 		myThread.start();
 		Game.displayMenu(myTama);
