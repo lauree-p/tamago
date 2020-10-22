@@ -82,19 +82,20 @@ public class Game {
 		System.out.print("\n\t\t\t\t   Temps de vie restant : " + myTama.getLifeTime() + " jours\n");
 		System.out.print("\t\t\t\t\t\t    Age : " + myTama.getAge());
 		System.out.print("\n\n");
-		System.out.println("| Nom : " + myTama.getFirstName());
-		System.out.println("| Sexe : " + myTama.getGender());
-		System.out.println("| Status : " + myTama.getStatusAge());
+		System.out.println("| Nom     : " + myTama.getFirstName());
+		System.out.println("| Sexe    : " + myTama.getGender());
+		System.out.println("| Status  : " + myTama.getStatusAge());
 		System.out.println("| Couleur : " + myTama.getColor() + "\n");
+		System.out.println("| Poids   : " + myTama.getWeight() + " kg");
+		System.out.println("| Taille  : " + myTama.getHeight() + " cm" + "\n");
+		
 		System.out.println("| Vie : " + myTama.getHealth());
 		System.out.println("| Etat de santé : " + myTama.getHealthState());
-		System.out.println("| Faim : " + myTama.getHunger());
-		System.out.println("| Soif : " + myTama.getThirst() + "\n");
-		System.out.println("| Poids : " + myTama.getWeight() + " kg");
-		System.out.println("| Taille : " + myTama.getHeight() + " cm" + "\n");
-		System.out.println("| Humeur : " + myTama.getMood());
+		System.out.println("| Faim    : " + myTama.getHunger());
+		System.out.println("| Soif    : " + myTama.getThirst() + "\n");
+		System.out.println("| Humeur  : " + myTama.getMood());
 		System.out.println("| Hygiene : " + myTama.getHygiene());
-		System.out.println("| Niveau de fatigue : " + myTama.getEnergy());
+		System.out.println("| Energie : " + myTama.getEnergy());
 		System.out.print("\n");
 		System.out.println("\t\t\t\t\t\t\t(1)RETOUR\n");
 
@@ -189,7 +190,7 @@ public class Game {
 
 	public static void healh(Tamagotchi myTama) {
 		notifSick = false;
-
+		myTama.setHealth(100);
 		clearAndTitle();
 		menuHealthInProgress();
 		Draw.drawPlus();

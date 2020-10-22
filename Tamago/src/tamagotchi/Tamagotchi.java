@@ -251,7 +251,16 @@ public class Tamagotchi {
 	 * @param health the health to set
 	 */
 	public void setHealth(int health) {
-		this.health = health;
+		int max = 100;
+		int min = 0;
+		int somme = this.getHealth() + health;
+		if (somme >= max) {
+			this.health = max;
+		} else if (somme < 0) {
+			this.health = min;
+		} else {
+			this.health = somme;
+		}
 	}
 
 	/**

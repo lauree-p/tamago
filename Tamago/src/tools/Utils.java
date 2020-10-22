@@ -1,5 +1,7 @@
 package tools;
 
+import java.util.concurrent.TimeUnit;
+
 public class Utils {
 
 	public Utils() {
@@ -36,6 +38,22 @@ public class Utils {
 		for (int i =0 ; i < 4 ; i++) {
 			Utils.sleep(1000);
 			System.out.print(". ");
+		}
+	}
+	
+	public static void sleepSeconds(int x) {
+		try {
+			TimeUnit.SECONDS.sleep(x);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void sleepMinute(int x) {
+		try {
+			TimeUnit.MINUTES.sleep(x);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
 		}
 	}
 }
