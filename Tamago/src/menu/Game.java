@@ -5,6 +5,11 @@ import tamagotchi.Tamagotchi;
 import tools.Clavier;
 import tools.Utils;
 
+/**
+ * 
+ * @author Laurée
+ *
+ */
 public class Game {
 
 	static String separatorThin = "------------------------------------------------------------------";
@@ -18,11 +23,18 @@ public class Game {
 	public static boolean notifFriend;
 	public static int counterFriends;
 
+	/**
+	 * 
+	 */
 	public static void clearAndTitle() {
 		Utils.clearConsole();
 		MenuInit.title();
 	}
 
+	/**
+	 * 
+	 * @param myTama
+	 */
 	public static void displayMenu(Tamagotchi myTama) {
 		clearAndTitle();
 		menuTop();
@@ -36,6 +48,10 @@ public class Game {
 		chooseAction(myTama);
 	}
 
+	/**
+	 * 
+	 * @param myTama
+	 */
 	public static void chooseAction(Tamagotchi myTama) {
 		int intAction = Clavier.lireInt();
 		switch (intAction) {
@@ -69,6 +85,10 @@ public class Game {
 		}
 	}
 
+	/**
+	 * 
+	 * @param myTama
+	 */
 	public static void informations(Tamagotchi myTama) {
 		Utils.clearConsole();
 		clearAndTitle();
@@ -78,6 +98,10 @@ public class Game {
 		chooseInformation(myTama);
 	}
 
+	/**
+	 * 
+	 * @param myTama
+	 */
 	public static void menuInformation(Tamagotchi myTama) {
 		System.out.print("\n\t\t\t\t   Temps de vie restant : " + myTama.getLifeTime() + " jours\n");
 		System.out.print("\t\t\t\t\t\t    Age : " + myTama.getAge());
@@ -101,6 +125,10 @@ public class Game {
 
 	}
 
+	/**
+	 * 
+	 * @param myTama
+	 */
 	public static void chooseInformation(Tamagotchi myTama) {
 		int intActionInformation = Clavier.lireInt();
 
@@ -114,6 +142,10 @@ public class Game {
 		}
 	}
 
+	/**
+	 * 
+	 * @param myTama
+	 */
 	public static void feedingTime(Tamagotchi myTama) {
 		clearAndTitle();
 		menuTopIn(2);
@@ -122,6 +154,9 @@ public class Game {
 		chooseFeedingTime(myTama);
 	}
 
+	/**
+	 * 
+	 */
 	public static void menuFeedingTime() {
 		System.out.println("(1)CROQUETTES");
 		System.out.println("(2)EAU");
@@ -129,6 +164,10 @@ public class Game {
 		System.out.println("\t\t\t\t\t\t\t(4)RETOUR");
 	}
 
+	/**
+	 * 
+	 * @param myTama
+	 */
 	public static void chooseFeedingTime(Tamagotchi myTama) {
 		int intActionFeedingTime = Clavier.lireInt();
 
@@ -155,6 +194,10 @@ public class Game {
 		}
 	}
 
+	/**
+	 * 
+	 * @param myTama
+	 */
 	public static void activities(Tamagotchi myTama) {
 		clearAndTitle();
 		menuTopIn(4);
@@ -163,12 +206,19 @@ public class Game {
 		chooseActivities(myTama);
 	}
 
+	/**
+	 * 
+	 */
 	public static void menuActivities() {
 		System.out.println("(1)FAIRE DU SPORTS");
 		System.out.println("(2)PROMENADE");
 		System.out.println("\t\t\t\t\t\t\t(3)RETOUR");
 	}
 
+	/**
+	 * 
+	 * @param myTama
+	 */
 	public static void chooseActivities(Tamagotchi myTama) {
 		int intActionActivities = Clavier.lireInt();
 
@@ -188,6 +238,10 @@ public class Game {
 		}
 	}
 
+	/**
+	 * 
+	 * @param myTama
+	 */
 	public static void healh(Tamagotchi myTama) {
 		notifSick = false;
 		myTama.setHealth(100);
@@ -232,6 +286,10 @@ public class Game {
 
 	}
 
+	/**
+	 * 
+	 * @param myTama
+	 */
 	public static void repose(Tamagotchi myTama) {
 		clearAndTitle();
 		menuEmpty();
@@ -240,12 +298,19 @@ public class Game {
 		chooseRepose(myTama);
 	}
 
+	/**
+	 * 
+	 */
 	public static void menuRepose() {
 		System.out.println("(1)FAIRE UNE SIESTE");
 		System.out.println("(2)DORMIR");
 		System.out.println("\t\t\t\t\t\t\t(3)RETOUR");
 	}
 
+	/**
+	 * 
+	 * @param myTama
+	 */
 	public static void chooseRepose(Tamagotchi myTama) {
 		int intActionRepose = Clavier.lireInt();
 
@@ -265,6 +330,10 @@ public class Game {
 		}
 	}
 	
+	/**
+	 * 
+	 * @param myTama
+	 */
 	public static void friend(Tamagotchi myTama) {
 		clearAndTitle();
 		menuEmpty();
@@ -273,6 +342,10 @@ public class Game {
 		chooseFriend(myTama);
 	}
 
+	/**
+	 * 
+	 * @param myTama
+	 */
 	public static void menuFriend(Tamagotchi myTama) {
 		counterFriends = 0;
 		if (myTama.getFriends().size() == 0) {
@@ -289,6 +362,10 @@ public class Game {
 		}
 	}
 	
+	/**
+	 * 
+	 * @param myTama
+	 */
 	public static void chooseFriend(Tamagotchi myTama) {
 		int intActionFriend = Clavier.lireInt();
 		int tabSizeFriend = myTama.getFriends().size();
@@ -304,6 +381,10 @@ public class Game {
 		}
 	}
 
+	/**
+	 * 
+	 * @param myTama
+	 */
 	public static void custom(Tamagotchi myTama) {
 		clearAndTitle();
 		menuEmpty();
@@ -312,6 +393,10 @@ public class Game {
 		chooseCustom(myTama);
 	}
 
+	/**
+	 * 
+	 * @param myTama
+	 */
 	public static void menuCustom(Tamagotchi myTama) {
 		if (myTama.isMask()) {
 			System.out.println("(1)ENLEVER LE MASQUE");
@@ -322,6 +407,10 @@ public class Game {
 		System.out.println("\t\t\t\t\t\t\t(3)RETOUR");
 	}
 
+	/**
+	 * 
+	 * @param myTama
+	 */
 	public static void chooseCustom(Tamagotchi myTama) {
 		int intActionCustom = Clavier.lireInt();
 
@@ -418,6 +507,10 @@ public class Game {
 		System.out.println(separatorBold);
 	}
 
+	/**
+	 * 
+	 * @param myTama
+	 */
 	public static void washing(Tamagotchi myTama) {
 		notifPoop = false;
 		notifPee = false;
@@ -473,6 +566,10 @@ public class Game {
 		displayMenu(myTama);
 	}
 
+	/**
+	 * 
+	 * @param myTama
+	 */
 	public static void sleep(Tamagotchi myTama) {
 		notifEnergy = false;
 		for (int i = 0; i < 2; i++) {
@@ -499,6 +596,10 @@ public class Game {
 		displayMenu(myTama);
 	}
 
+	/**
+	 * 
+	 * @param myTama
+	 */
 	public static void rest(Tamagotchi myTama) {
 		notifEnergy = false;
 
@@ -525,11 +626,19 @@ public class Game {
 		displayMenu(myTama);
 	}
 
+	/**
+	 * 
+	 * @param myTama
+	 */
 	public static void mask(Tamagotchi myTama) {
 		myTama.setMask();
 		displayMenu(myTama);
 	}
 
+	/**
+	 * 
+	 * @param myTama
+	 */
 	public static void menuTincture(Tamagotchi myTama) {
 		System.out.println("(1)ROUGE");
 		System.out.println("(2)BLEU");
@@ -538,6 +647,10 @@ public class Game {
 		System.out.println("\t\t\t\t\t\t\t(5)RETOUR");
 	}
 
+	/**
+	 * 
+	 * @param myTama
+	 */
 	public static void tincture(Tamagotchi myTama) {
 		clearAndTitle();
 		menuEmpty();
@@ -546,6 +659,10 @@ public class Game {
 		chooseTincture(myTama);
 	}
 
+	/**
+	 * 
+	 * @param myTama
+	 */
 	public static void chooseTincture(Tamagotchi myTama) {
 		int intTincture = Clavier.lireInt();
 
@@ -575,6 +692,10 @@ public class Game {
 		}
 	}
 
+	/**
+	 * 
+	 * @param myTama
+	 */
 	public static void makeSport(Tamagotchi myTama) {
 
 		for (int i = 0; i < 3; i++) {
@@ -600,6 +721,10 @@ public class Game {
 		displayMenu(myTama);
 	}
 
+	/**
+	 * 
+	 * @param myTama
+	 */
 	public static void walkAround(Tamagotchi myTama) {
 
 		clearAndTitle();
@@ -668,6 +793,9 @@ public class Game {
 		System.out.println(separatorBold);
 	}
 
+	/**
+	 * 
+	 */
 	public static void notif() {
 		if (notifPoop) {
 			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@ Ahhh fait caca ! @@@@@@@@@@@@@@@@@@@@@@@");

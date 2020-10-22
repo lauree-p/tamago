@@ -7,7 +7,7 @@ import tools.Clavier;
 import tools.Utils;
 
 /**
- *Classe qui regroupe toute la partie de l'initialisation du jeu 
+ * Classe qui regroupe toute la partie de l'initialisation du jeu 
  * @author Laurée
  *
  */
@@ -42,7 +42,7 @@ public class MenuInit {
 	}
 
 	/**
-	 * 
+	 * Titre du jeu
 	 */
 	public static void title() {
 		System.out.println("     _______                                _       _     _ ");
@@ -56,7 +56,7 @@ public class MenuInit {
 	}
 
 	/**
-	 * 
+	 * Affiche la demande le type de tamagotchi
 	 */
 	public static void type() {
 		System.out.println(separatorThin);
@@ -67,7 +67,7 @@ public class MenuInit {
 	}
 	
 	/**
-	 * 
+	 * Demande le type de tamagotchi
 	 * @return scType
 	 */
 	public static int requestType() {
@@ -80,14 +80,14 @@ public class MenuInit {
 	}
 
 	/**
-	 * 
+	 * Affiche le choix du type du tama
 	 */
 	public static void replayType() {
 			System.out.println("Vous avez choisit un "+ Main.myTama.getType());
 	}	
 	
 	/**
-	 * 
+	 * Affiche le genre du tamagotchi
 	 */
 	public static void gender() {
 		System.out.println(separatorThin);
@@ -102,27 +102,27 @@ public class MenuInit {
 	}
 	
 	/**
-	 * 
+	 * Affiche la demande le prénom du tama 
 	 */
 	public static void firstName() {
-		System.out.println("Donnez un nom à votre " + Main.myTama.getType() + " :");
+		System.out.println("Donnez un nom à votre " + Main.myTama.getType() + " (min 3 caractere et max 5 :");
 	}
 	
 	/**
-	 * 
+	 * Demande le prénom du tama et l'attribut au tama
 	 */
 	public static void requestFirstName() {
 		String scFirstname;
 		
-		do {
+		do { // demande à l'utilisateur
 			scFirstname = Clavier.lireString();
-		} while (valideRequestFirstName(scFirstname) == false);
+		} while (valideRequestFirstName(scFirstname) == false); // tant que scFirstname n'est pas valid
 		
-		Main.myTama.setFirstName(scFirstname.toUpperCase());
+		Main.myTama.setFirstName(scFirstname.toUpperCase()); // attribut le prénom et le transforme en majuscule
 	}
 
 	/**
-	 * 
+	 * Valide l'entrée du prénom
 	 * @param scFirstname
 	 * @return valid
 	 */
