@@ -151,6 +151,9 @@ public class Tamagotchi {
 
 	}
 
+	/**
+	 * 
+	 */
 	private void randomFirstname() {
 		String[] femaleFirstNameTab = {
 				"Câline",
@@ -317,6 +320,9 @@ public class Tamagotchi {
 
 	}
 	
+	/**
+	 * 
+	 */
 	public void randomType() {
 		String[] tabType = { "Chien", "Chat" };
 		int random = (int) (Math.random() * 2);
@@ -337,6 +343,9 @@ public class Tamagotchi {
 		this.color = color;
 	}
 
+	/**
+	 * 
+	 */
 	public void getRandomColor() {
 		String[] color = { "Noir", "Gris", "Marron", "Blanc", "Beige" };
 		int random = (int) (Math.random() * 4);
@@ -894,6 +903,9 @@ public class Tamagotchi {
 		this.setCounterHygiene(-5);
 	}
 
+	/**
+	 * 
+	 */
 	public void pee() {
 		this.counterBladder = 0;
 		Game.notif = true;
@@ -901,10 +913,16 @@ public class Tamagotchi {
 		this.setCounterHygiene(-2);
 	}
 
+	/**
+	 * 
+	 */
 	public void wash() {
 		this.counterHygiene = 10;
 	}
 
+	/**
+	 * 
+	 */
 	public void findFriend() {
 		int random = (int) (Math.random() * 3);
 		if (random == 0) {

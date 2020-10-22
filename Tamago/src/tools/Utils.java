@@ -2,6 +2,11 @@ package tools;
 
 import java.util.concurrent.TimeUnit;
 
+/**
+ * 
+ * @author Laurée
+ *
+ */
 public class Utils {
 
 	public Utils() {
@@ -41,6 +46,10 @@ public class Utils {
 		}
 	}
 	
+	/**
+	 * 
+	 * @param x
+	 */
 	public static void sleepSeconds(int x) {
 		try {
 			TimeUnit.SECONDS.sleep(x);
@@ -49,6 +58,10 @@ public class Utils {
 		}
 	}
 	
+	/**
+	 * 
+	 * @param x
+	 */
 	public static void sleepMinute(int x) {
 		try {
 			TimeUnit.MINUTES.sleep(x);
