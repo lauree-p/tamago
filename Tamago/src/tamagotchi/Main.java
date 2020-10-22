@@ -3,6 +3,11 @@ package tamagotchi;
 import menu.Game;
 import menu.MenuInit;
 
+/**
+ * 
+ * @author Laurée
+ *
+ */
 public class Main {
 	
 	// Init new Tamagotchi
