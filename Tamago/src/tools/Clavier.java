@@ -25,7 +25,6 @@ public class Clavier {
 			x = Float.parseFloat(ligne_lue);
 		} catch (NumberFormatException err) {
 			System.out.println("*** Erreur de donnee ***");
-			System.exit(0);
 		}
 		return x;
 	}
@@ -37,7 +36,6 @@ public class Clavier {
 			x = Double.parseDouble(ligne_lue);
 		} catch (NumberFormatException err) {
 			System.out.println("*** Erreur de donnee ***");
-			System.exit(0);
 		}
 		return x;
 	}
@@ -49,7 +47,6 @@ public class Clavier {
 			n = Integer.parseInt(ligne_lue);
 		} catch (NumberFormatException err) {
 			System.out.println("*** Erreur de donnee ***");
-			System.exit(0);
 		}
 		return n;
 	}

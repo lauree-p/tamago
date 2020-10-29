@@ -29,7 +29,7 @@ public class Tamagotchi {
 	boolean mask;
 	String hygiene;
 	int counterHygiene;
-	ArrayList<Tamagotchi> friends = new ArrayList<Tamagotchi>();;
+	ArrayList<Tamagotchi> friends = new ArrayList<Tamagotchi>();
 	int counterStomach;
 	int counterBladder;
 	boolean sick;
@@ -86,19 +86,19 @@ public class Tamagotchi {
 		this.height = 45;
 		this.weight = 3;
 		this.lifeTime = 7300;
-		this.counterHunger = 5;
-		this.counterThirst = 5;
-		this.counterMood = 5;
 		this.mask = false;
 		this.sick = false;
-		this.counterHygiene = 3;
-		this.counterStomach = 0;
-		this.counterBladder = 0;
-		this.counterEnergy = 5;
 		this.health = 100;
 		this.days = 0;
 		this.months = 0;
 		this.years = 0;
+		this.counterHygiene = 3;
+		this.counterStomach = 0;
+		this.counterBladder = 0;
+		this.counterEnergy = 5;
+		this.counterHunger = 5;
+		this.counterThirst = 5;
+		this.counterMood = 5;
 
 		this.setGender();
 		this.setHunger();
@@ -147,7 +147,6 @@ public class Tamagotchi {
 	}
 
 	private void setRelation() {
-		// TODO Auto-generated method stub
 
 	}
 

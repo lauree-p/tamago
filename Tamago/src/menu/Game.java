@@ -6,9 +6,7 @@ import tools.Clavier;
 import tools.Utils;
 
 /**
- * 
  * @author Laurée
- *
  */
 public class Game {
 
