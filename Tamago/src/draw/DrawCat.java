@@ -36,7 +36,7 @@ public class DrawCat {
 		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 	}
 	
-	/**
+	/** 
 	 * 
 	 */
 	public static void sleep1() {

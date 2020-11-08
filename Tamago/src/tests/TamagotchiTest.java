@@ -3,7 +3,7 @@ package tests;
 import static org.junit.Assert.*;
 import org.junit.Test;
 import tamagotchi.Tamagotchi;
-
+ 
 public class TamagotchiTest {
 	
 //	Tamagotchi testTama = new Tamagotchi();

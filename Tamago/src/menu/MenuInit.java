@@ -24,7 +24,7 @@ public class MenuInit {
 
 	/**
 	 * Permet de lancer le menu d'initialisation du nouveau Tamagotchi.
-	 */
+	 */ 
 	public static void startInit() {
 		
 		Utils.clearConsole();

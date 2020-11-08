@@ -11,7 +11,7 @@ public class Dog extends Tamagotchi{
 	public Dog() {
 		
 	}
-
+ 
 	public Dog(int height, int weight, int lifeTime, int counterHunger, int counterThirst, int counterMood,
 			boolean mask, int counterHygiene, int counterStomach, int counterBladder, boolean sick, int counterEnergy,
 			int health) {

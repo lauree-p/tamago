@@ -2,7 +2,7 @@ package tamagotchi;
 
 import menu.MenuInit;
 import tools.Utils;
-
+ 
 /**
  * 
  * @author Laurée

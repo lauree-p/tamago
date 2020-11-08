@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Clavier {
-
+ 
 	public static String lireString() { // lecture d'une chaine
 		String ligne_lue = null;
 		try {

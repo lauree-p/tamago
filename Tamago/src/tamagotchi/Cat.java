@@ -10,7 +10,7 @@ public class Cat extends Tamagotchi {
 	
 	public Cat() {
 		
-	}
+	} 
 
 	public Cat(int height, int weight, int lifeTime, int counterHunger, int counterThirst, int counterMood,
 			boolean mask, int counterHygiene, int counterStomach, int counterBladder, boolean sick, int counterEnergy,
