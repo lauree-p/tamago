@@ -3,88 +3,75 @@ package tamagotchi;
 import java.util.ArrayList;
 
 import menu.Game;
+import tools.Utils;
 
 /**
- * 
- * @author Laurée
- *
+ * @author Laurï¿½e
  */
-public class Tamagotchi {
+public abstract class Tamagotchi {
 
 	String firstName;
 	String gender;
 	String type;
 	String color;
-	int height;
-	int weight;
 	String statusAge;
 	String age;
-	int lifeTime;
 	String hunger;
-	int counterHunger;
 	String thirst;
-	int counterThirst;
 	String mood;
-	int counterMood;
-	boolean mask;
 	String hygiene;
-	int counterHygiene;
-	ArrayList<Tamagotchi> friends = new ArrayList<Tamagotchi>();
-	int counterStomach;
-	int counterBladder;
-	boolean sick;
 	String energy;
-	int counterEnergy;
-	ArrayList<Tamagotchi> babies = new ArrayList<Tamagotchi>();
-	Tamagotchi guestFriend;
+	String healthState;
+	String relation;
+	String randomFirstName;
+	
 	int health;
 	int days;
 	int months;
 	int years;
-	String healthState;
-	int relationCounter;
-	String relation;
-	String randomFirstName;
+	int height;
+	int weight;
+	int lifeTime;
+	boolean sick;
+	boolean mask;
 	
+	int counterStomach;
+	int counterBladder;
+	int counterHygiene;
+	int counterMood;
+	int counterThirst;
+	int counterEnergy;
+	int counterHunger;
+	int counterRelation;
+
+	
+	Tamagotchi guestFriend;
+	ArrayList<Tamagotchi> friends = new ArrayList<Tamagotchi>();
+	ArrayList<Tamagotchi> babies = new ArrayList<Tamagotchi>();
 
 	public Tamagotchi() {
-
+		
 	}
-
+	
 	/**
-	 * @param firstName
-	 * @param gender
-	 * @param type
-	 * @param color
+	 * 
 	 * @param height
 	 * @param weight
-	 * @param statusAge
-	 * @param age
 	 * @param lifeTime
-	 * @param hunger
 	 * @param counterHunger
-	 * @param thirst
 	 * @param counterThirst
-	 * @param mood
 	 * @param counterMood
 	 * @param mask
-	 * @param hygiene
 	 * @param counterHygiene
-	 * @param friends
 	 * @param counterStomach
 	 * @param counterBladder
 	 * @param sick
-	 * @param energy
 	 * @param counterEnergy
-	 * @param babies
-	 * @param guestFriend
-	 * @param sc
+	 * @param health
 	 */
 	public Tamagotchi(int height, int weight, int lifeTime, int counterHunger, int counterThirst, int counterMood,
 			boolean mask, int counterHygiene, int counterStomach, int counterBladder, boolean sick, int counterEnergy,
 			int health) {
-		this.height = 45;
-		this.weight = 3;
 		this.lifeTime = 7300;
 		this.mask = false;
 		this.sick = false;
@@ -92,51 +79,20 @@ public class Tamagotchi {
 		this.days = 0;
 		this.months = 0;
 		this.years = 0;
-		this.counterHygiene = 3;
-		this.counterStomach = 0;
-		this.counterBladder = 0;
-		this.counterEnergy = 5;
-		this.counterHunger = 5;
-		this.counterThirst = 5;
-		this.counterMood = 5;
-
-		this.setGender();
-		this.setHunger();
-		this.setThirst();
-		this.setHygiene();
-		this.setEnergy();
-		this.setMood();
-		this.getRandomColor();
-		this.setStatusAge();
-		this.setHealthState();
-		this.setAge();
-	}
-
-	public Tamagotchi(String gender, String randomFirstName, String relation, int relationCounter) {
-
-		this.gender = gender;
-		this.randomFirstName = randomFirstName;
-		this.relation = relation;
-		this.relationCounter = relationCounter ;
-		
-		this.setGender();
-		this.randomFirstname();
-		this.setRelation();
-		this.randomType();
 	}
 
 	/**
 	 * @return the relationCounter
 	 */
 	public int getRelationCounter() {
-		return relationCounter;
+		return counterRelation;
 	}
 
 	/**
 	 * @param relationCounter the relationCounter to set
 	 */
 	public void setRelationCounter(int relationCounter) {
-		this.relationCounter = relationCounter;
+		this.counterRelation = relationCounter;
 	}
 
 	/**
@@ -146,101 +102,26 @@ public class Tamagotchi {
 		return relation;
 	}
 
-	private void setRelation() {
-
+	public void setRelation(String x) {
+		this.relation = x;
 	}
 
 	/**
 	 * 
 	 */
-	private void randomFirstname() {
-		String[] femaleFirstNameTab = {
-				"Câline",
-				"Chipie",
-				"Chouinette",
-				"Choupinette",
-				"Coquine",
-				"Filoutte",
-				"Frimouse",
-				"Fripouille",
-				"Artichaut",
-				"Fantomette",
-				"Foulkan",
-				"Gelatine",
-				"Grisebouille",
-				"Lulubelle",
-				"Miaulette",
-				"Nicotine",
-				"Pimprenelle",
-				"Pitot",
-				"Ristouflette",
-				"Soquette",
-				"Tapisserie",
-				"Troufinette",
-				"Zézette",
-				"Zibouille",
-				"Gribouille",
-				"Altesse",
-				"Celeste",
-				 "Duchesse",
-				"Galatée",
-				"Galaxie",
-				"Gracieuse",
-				"Joconde",
-				"Lionne"};
-
-		String[] maleFirstNameTab = {
-				"Ralph"
-				,"Raphaël"
-				,"Rémi"
-				,"Robin"
-				,"Rocky"
-				,"Rodolphe"
-				,"Romeo"
-				,"Ruben"
-				,"Rufus"
-				,"Ryan"
-				,"Android"
-				,"Apple"
-				,"Giga"
-				,"Google"
-				,"Java"
-				,"Pixel"
-				,"Siri"
-				,"Virus"
-				,"Widget"
-				,"Wifi"
-				,"Aladin"
-				,"Baloo"
-				,"Dingo"
-				,"Dumbo"
-				,"Jafar"
-				,"Flash"
-				,"Hercule"
-				,"Merlin"
-				,"Mickey"
-				,"Nemo"
-				,"Pinocchio"
-				,"Pluto"
-				,"Rémy"
-				,"Simba"
-				,"Sully"
-				,"Tarzan"
-				,"Tigrou"
-				,"Winnie"
-				,"Woody"};
-		
-		int fFNTLenght = femaleFirstNameTab.length;
-		int mFNTLenght = maleFirstNameTab.length;
-		int randomFirstName;
-		if(this.getGender() == "male") {
-			randomFirstName = (int) (Math.random() * (mFNTLenght - 0));
-		}
-		else {
-			randomFirstName = (int) (Math.random() * (fFNTLenght - 0));
-		}
-		this.firstName = maleFirstNameTab[randomFirstName];
-	}
+//	private void randomFirstname() {
+//		
+//		int fFNTLenght = Utils.femaleFirstNameTab.length;
+//		int mFNTLenght = Utils.maleFirstNameTab.length;
+//		int randomFirstName;
+//		if(this.getGender() == "male") {
+//			randomFirstName = (int) (Math.random() * (mFNTLenght - 0));
+//		}
+//		else {
+//			randomFirstName = (int) (Math.random() * (fFNTLenght - 0));
+//		}
+//		this.firstName = Utils.maleFirstNameTab[randomFirstName];
+//	}
 
 	/**
 	 * @return the health
@@ -316,7 +197,6 @@ public class Tamagotchi {
 		default:
 			break;
 		}
-
 	}
 	
 	/**
@@ -389,24 +269,8 @@ public class Tamagotchi {
 	/**
 	 * @param statusAge the statusAge to set
 	 */
-	public void setStatusAge() {
-		if (this.getType() == "chien") {
-			if (this.years >= 12) {
-				this.statusAge = "Vieux chien";
-			} else if (this.years >= 2) {
-				this.statusAge = "Adulte";
-			} else {
-				this.statusAge = "Chiot";
-			}
-		} else {
-			if (this.years >= 12) {
-				this.statusAge = "Vieux chat";
-			} else if (this.years >= 2) {
-				this.statusAge = "Adulte";
-			} else {
-				this.statusAge = "Chaton";
-			}
-		}
+	public void setStatusAge(String statusAge) {
+		this.statusAge = statusAge;
 	}
 
 	/**
@@ -505,13 +369,13 @@ public class Tamagotchi {
 	 */
 	public void setHunger() {
 		if (this.getCounterHunger() >= 7) {
-			this.hunger = "Rassasié";
+			this.hunger = "Rassasiï¿½";
 		} else if (this.getCounterHunger() >= 5) {
 			this.hunger = "Normal";
 		} else if (this.getCounterHunger() >= 3) {
 			this.hunger = "Petit creux";
 		} else {
-			this.hunger = "Affamé";
+			this.hunger = "Affamï¿½";
 		}
 	}
 
@@ -551,13 +415,13 @@ public class Tamagotchi {
 	 */
 	public void setThirst() {
 		if (this.getCounterThirst() >= 7) {
-			this.thirst = "Désaltéré";
+			this.thirst = "Dï¿½saltï¿½rï¿½";
 		} else if (this.getCounterThirst() >= 5) {
 			this.thirst = "Normal";
 		} else if (this.getCounterThirst() >= 3) {
-			this.thirst = "Assoifé";
+			this.thirst = "Assoifï¿½";
 		} else {
-			this.thirst = "Déshydraté";
+			this.thirst = "Dï¿½shydratï¿½";
 		}
 	}
 
@@ -808,9 +672,9 @@ public class Tamagotchi {
 		} else if (this.getCounterEnergy() >= 5) {
 			this.energy = "En forme";
 		} else if (this.getCounterEnergy() >= 3) {
-			this.energy = "Fatigué";
+			this.energy = "Fatiguï¿½";
 		} else {
-			this.energy = "Trés Fatigué";
+			this.energy = "Trï¿½s Fatiguï¿½";
 			Game.notif = true;
 			Game.notifEnergy = true;
 		}
@@ -924,14 +788,39 @@ public class Tamagotchi {
 	 */
 	public void findFriend() {
 		int random = (int) (Math.random() * 3);
+		int randomGenderFriend = (int) (Math.random() * 1);
 		if (random == 0) {
-			Tamagotchi newFriend = new Tamagotchi(null, null,null ,0);
-			this.friends.add(newFriend);
+			if (randomGenderFriend == 0) {
+				Dog newDogFriend = new Dog();
+				this.friends.add(newDogFriend);
+			}
+			else {
+				Cat newCatFriend = new Cat();
+				this.friends.add(newCatFriend);
+			}
+			
 			Game.notif = true;
 			Game.notifFriend = true;
 			
 		}
 
 	}
+	
+	/**
+	 * Methods polymorph for drawing
+	 */
+	public void drawMyTama() {}
+
+	public void drawWash() {}
+
+	public void drawSleep() {}
+	
+	public void drawRest() {}
+	
+	public void drawSport() {}
+	
+	public void drawWalkAround() {}
+	
+	public void drawMyTamaWithMask() {}
 	
 }

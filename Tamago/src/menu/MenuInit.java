@@ -8,18 +8,22 @@ import tools.Utils;
 
 /**
  * Classe qui regroupe toute la partie de l'initialisation du jeu 
- * @author Laurée
- *
+ * @author Laurï¿½e
  */
 public class MenuInit {
 	
-	static String separatorThin = "------------------------------------------------------------------";
+	 // Stock les valeurs ï¿½ attribuer au futur chien ou chat
+	public static int initType;
+	public static String initTypeToString;
+	public static String initName;
+	public static String initGender;
 	
+	// Separateurs
+	static String separatorThin = "------------------------------------------------------------------";
 	static String separatorBold = "====================================================================";
 
 	/**
 	 * Permet de lancer le menu d'initialisation du nouveau Tamagotchi.
-	 * {@inheritdoc}  
 	 */
 	public static void startInit() {
 		
@@ -31,7 +35,7 @@ public class MenuInit {
 		
 		requestType();
 		
-		replayType();
+		printAnswerType();
 		
 		gender();
 		
@@ -43,7 +47,7 @@ public class MenuInit {
 	}
 
 	/**
-	 * Titre du jeu
+	 * Print ACSCI le titre du jeu
 	 */
 	public static void title() {
 		System.out.println("     _______                                _       _     _ ");
@@ -57,16 +61,14 @@ public class MenuInit {
 	}
 
 	/**
-	 * Affiche la demande le type de tamagotchi
+	 * Print la demande du type de tamagotchi
 	 */
 	public static void type() {
 		
 		System.out.println(separatorThin);
 		
 		System.out.println("> Choisissez votre type de compagnon :\n");
-		
-		System.out.println("- (1) : Chien (ALPHA Version) \n- (2) : Chat");
-		
+		System.out.println("- (1) : Chien\n- (2) : Chat");
 		System.out.println(separatorThin);
 		
 	}
@@ -78,18 +80,8 @@ public class MenuInit {
 	public static int requestType() {
 		
 		int scType = Clavier.lireInt();
-		
-		if (scType == 1 || scType == 2) {
-			
-			Main.myTama.setType(scType);
-			
-			System.out.println(separatorThin);
-		}
-		else {
-			System.out.println("Erreur détecté, saisissez 1 ou 2");
-			
-			requestType();
-		}
+		System.out.println(separatorThin);
+		initType = scType; // stock la valeur du type pour crï¿½er l'objet plus tard
 		
 		return scType;
 	}
@@ -97,10 +89,18 @@ public class MenuInit {
 	/**
 	 * Affiche le choix du type du tama
 	 */
-	public static void replayType() {
+	public static void printAnswerType() {
 		
-			System.out.println("Vous avez choisit un "+ Main.myTama.getType());
-	}	
+		switch (initType) {
+		case 1 : 
+			initTypeToString = "Chien";
+			break;
+		case 2 : 
+			initTypeToString = "Chat";
+			break;
+		}
+			System.out.println("Vous avez choisit un "+ initTypeToString);
+	}
 	
 	/**
 	 * Affiche le genre du tamagotchi
@@ -108,58 +108,50 @@ public class MenuInit {
 	public static void gender() {
 		
 		System.out.println(separatorThin);
+		
+		String[] tabGender = { "Male", "Femelle" };
+		int random = (int) (Math.random() * 2);
+		initGender = tabGender[random];
 
-		if (Main.myTama.getGender() == "Male") {
-			
-			System.out.println("Félication ! C'est un male !");
+		if (initGender == "Male") {
+			System.out.println("Fï¿½lication ! C'est un male !");
 			
 		} else {
 			
-			System.out.println("Félication ! C'est une femelle !");
+			System.out.println("Fï¿½lication ! C'est une femelle !");
 		}
 		
 		System.out.println(separatorThin);
 	}
 	
 	/**
-	 * Affiche la demande le prénom du tama 
+	 * Affiche la demande le prï¿½nom du tama
 	 */
 	public static void firstName() {
-		
-		System.out.println("Donnez un nom à votre " + Main.myTama.getType() + " (min 3 caracteres et max 6) :");
+		System.out.println("Donnez un nom ï¿½votre " + initTypeToString + " (min 3 caractere et max 6) :");
 	}
 	
 	/**
-	 * Demande le prénom du tama et l'attribut au tama
+	 * Demande le prï¿½nom du tama
 	 */
 	public static void requestFirstName() {
 		
 		String scFirstname;
 		
-		scFirstname = Clavier.lireString();
-			
-		while (valideRequestFirstName(scFirstname) == false) {
-			
-			System.out.println("Erreur détecté (min 3 caracteres et max 6)");
-			
-			firstName();
-			
-			scFirstname = Clavier.lireString();
-			
-		}; // tant que scFirstname n'est pas valid
+		do { 
+			scFirstname = Clavier.lireString(); // demande ï¿½ l'utilisateur
+		} while (valideRequestFirstName(scFirstname) == false); // tant que scFirstname n'est pas valide
 		
-		
-		Main.myTama.setFirstName(scFirstname.toUpperCase()); // attribut le prénom et le transforme en majuscule
+		initName = scFirstname.toUpperCase(); // stock le nom pour pour crï¿½er l'objet plus tard
 	}
 
 	/**
-	 * Valide l'entrée du prénom
+	 * Valide l'entrï¿½e du prï¿½nom
 	 * @param scFirstname
 	 * @return valid
 	 */
 	public static boolean valideRequestFirstName(String scFirstname) {
-		
-		String regex = "[a-zA-Z]{3,6}";
+		String regex = "[a-zA-Z]{3,6}"; // Que des lettres - 3 ï¿½ 6 lettres 
 		
 		Pattern pattern = Pattern.compile(regex);
 		

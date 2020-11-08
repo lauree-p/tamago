@@ -1,28 +1,30 @@
 package menu;
 
-import tamagotchi.Draw;
+import draw.Draw;
 import tamagotchi.Tamagotchi;
 import tools.Clavier;
 import tools.Utils;
 
 /**
- * @author Laurée
+ * Classe qui regroupe les mï¿½thodes utiles dans la partie jeu
+ * @author Laurï¿½e
  */
 public class Game {
-
+	// Sï¿½parateurs
 	static String separatorThin = "------------------------------------------------------------------";
 	static String separatorBold = "====================================================================";
-
+	// Notifications du jeu 
 	public static boolean notif;
 	public static boolean notifPoop;
 	public static boolean notifPee;
 	public static boolean notifEnergy;
 	public static boolean notifSick;
 	public static boolean notifFriend;
+	
 	public static int counterFriends;
 
 	/**
-	 * 
+	 * Nettoi la console et affiche le titre du jeu
 	 */
 	public static void clearAndTitle() {
 		Utils.clearConsole();
@@ -37,9 +39,9 @@ public class Game {
 		clearAndTitle();
 		menuTop();
 		if (myTama.isMask()) {
-			Draw.drawMyTamaWithMask();
+			myTama.drawMyTamaWithMask();
 		} else {
-			Draw.drawMyTama();
+			myTama.drawMyTama();
 		}
 		notif();
 		menuBot();
@@ -101,9 +103,8 @@ public class Game {
 	 * @param myTama
 	 */
 	public static void menuInformation(Tamagotchi myTama) {
-		System.out.print("\n\t\t\t\t   Temps de vie restant : " + myTama.getLifeTime() + " jours\n");
-		System.out.print("\t\t\t\t\t\t    Age : " + myTama.getAge());
-		System.out.print("\n\n");
+		System.out.print("\n\t\t\t\t\t\t     Age : " + myTama.getAge());
+		System.out.print("\n\n\n");
 		System.out.println("| Nom     : " + myTama.getFirstName());
 		System.out.println("| Sexe    : " + myTama.getGender());
 		System.out.println("| Status  : " + myTama.getStatusAge());
@@ -111,8 +112,8 @@ public class Game {
 		System.out.println("| Poids   : " + myTama.getWeight() + " kg");
 		System.out.println("| Taille  : " + myTama.getHeight() + " cm" + "\n");
 		
-		System.out.println("| Vie : " + myTama.getHealth());
-		System.out.println("| Etat de santé : " + myTama.getHealthState());
+		System.out.println("| Vie     : " + myTama.getHealth());
+		System.out.println("| Santï¿½   : " + myTama.getHealthState());
 		System.out.println("| Faim    : " + myTama.getHunger());
 		System.out.println("| Soif    : " + myTama.getThirst() + "\n");
 		System.out.println("| Humeur  : " + myTama.getMood());
@@ -156,10 +157,12 @@ public class Game {
 	 * 
 	 */
 	public static void menuFeedingTime() {
-		System.out.println("(1)CROQUETTES");
-		System.out.println("(2)EAU");
-		System.out.println("(3)BONBON");
-		System.out.println("\t\t\t\t\t\t\t(4)RETOUR");
+		System.out.println("\n\n\n\n\n\n\n\n"); // 8+1
+		System.out.println("\t|(1)CROQUETTES\n");  // 1+1
+		System.out.println("\t|(2)EAU\n"); // 1+1
+		System.out.println("\t|(3)BONBON"); // 1
+		System.out.println("\n\n\n\n\n\n\n\n"); // 8+1
+		System.out.println("\t\t\t\t\t\t\t   (4)RETOUR"); // total : 23
 	}
 
 	/**
@@ -208,9 +211,11 @@ public class Game {
 	 * 
 	 */
 	public static void menuActivities() {
-		System.out.println("(1)FAIRE DU SPORTS");
-		System.out.println("(2)PROMENADE");
-		System.out.println("\t\t\t\t\t\t\t(3)RETOUR");
+		System.out.println("\n\n\n\n\n\n\n\n\n"); // 9+1
+		System.out.println("\t|(1)FAIRE DU SPORTS\n"); // 1+1
+		System.out.println("\t|(2)PROMENADE"); // 1
+		System.out.println("\n\n\n\n\n\n\n\n"); // 8+1
+		System.out.println("\t\t\t\t\t\t\t   (3)RETOUR"); // total : 23
 	}
 
 	/**
@@ -300,9 +305,11 @@ public class Game {
 	 * 
 	 */
 	public static void menuRepose() {
-		System.out.println("(1)FAIRE UNE SIESTE");
-		System.out.println("(2)DORMIR");
-		System.out.println("\t\t\t\t\t\t\t(3)RETOUR");
+		System.out.println("\n\n\n\n\n\n\n\n\n"); // 9+1
+		System.out.println("\t|(1)FAIRE UNE SIESTE \n"); // 1+1
+		System.out.println("\t|(2)DORMIR"); // 1
+		System.out.println("\n\n\n\n\n\n\n\n"); // 8+1
+		System.out.println("\t\t\t\t\t\t\t   (3)RETOUR"); // total : 23
 	}
 
 	/**
@@ -347,8 +354,10 @@ public class Game {
 	public static void menuFriend(Tamagotchi myTama) {
 		counterFriends = 0;
 		if (myTama.getFriends().size() == 0) {
-			System.out.println("La liste des amis est vide");
-			System.out.println("\t\t\t\t\t\t\t(1)RETOUR");
+			System.out.println("\n\n\n\n\n\n\n\n\n\n"); // 10+1
+			System.out.println("\t\t\tLa liste des amis est vide\n"); // 1
+			System.out.println("\n\n\n\n\n\n\n\n\n\n"); // 10+1
+			System.out.println("\t\t\t\t\t\t\t   (1)RETOUR"); // total : 23
 		}
 		else {
 			notifFriend = false;
@@ -356,7 +365,7 @@ public class Game {
 				counterFriends++;
 				System.out.println("("+counterFriends+")"+friend.getFirstName().toUpperCase() +"/"+ friend.getType() +"/"+ friend.getGender());
 			};
-			System.out.println("\t\t\t\t\t\t\t("+ (myTama.getFriends().size()+1) +")RETOUR");
+			System.out.println("\t\t\t\t\t\t\t   ("+ (myTama.getFriends().size()+1) +")RETOUR");
 		}
 	}
 	
@@ -396,13 +405,15 @@ public class Game {
 	 * @param myTama
 	 */
 	public static void menuCustom(Tamagotchi myTama) {
+		System.out.println("\n\n\n\n\n\n\n\n\n"); // 9+1
 		if (myTama.isMask()) {
-			System.out.println("(1)ENLEVER LE MASQUE");
+			System.out.println("\t|(1)ENLEVER LE MASQUE\n"); // 1+1
 		} else {
-			System.out.println("(1)METTRE LE MASQUE");
+			System.out.println("\t|(1)METTRE LE MASQUE\n"); // ou 1+1
 		}
-		System.out.println("(2)TEINTURE");
-		System.out.println("\t\t\t\t\t\t\t(3)RETOUR");
+		System.out.println("\t|(2)TEINTURE"); // 1
+		System.out.println("\n\n\n\n\n\n\n\n\n"); // 9+1
+		System.out.println("\t\t\t\t\t\t\t   (3)RETOUR"); // total : 23
 	}
 
 	/**
@@ -570,26 +581,7 @@ public class Game {
 	 */
 	public static void sleep(Tamagotchi myTama) {
 		notifEnergy = false;
-		for (int i = 0; i < 2; i++) {
-			clearAndTitle();
-			menuTop();
-			Draw.sleep1();
-			menuBot();
-
-			Utils.sleep(800);
-			clearAndTitle();
-			menuTop();
-			Draw.sleep2();
-			menuBot();
-
-			Utils.sleep(800);
-			clearAndTitle();
-			menuTop();
-			Draw.sleep3();
-			menuBot();
-			Utils.sleep(800);
-		}
-
+		myTama.drawSleep();
 		myTama.setCounterEnergy(4);
 		displayMenu(myTama);
 	}
@@ -600,27 +592,8 @@ public class Game {
 	 */
 	public static void rest(Tamagotchi myTama) {
 		notifEnergy = false;
-
-		clearAndTitle();
-		menuTop();
-		Draw.sleep1();
-		menuBot();
-
-		Utils.sleep(800);
-		clearAndTitle();
-		menuTop();
-		Draw.sleep2();
-		menuBot();
-
-		Utils.sleep(800);
-		clearAndTitle();
-		menuTop();
-		Draw.sleep3();
-		menuBot();
-		Utils.sleep(800);
-
+		myTama.drawRest();
 		myTama.setCounterEnergy(8);
-
 		displayMenu(myTama);
 	}
 
@@ -638,11 +611,13 @@ public class Game {
 	 * @param myTama
 	 */
 	public static void menuTincture(Tamagotchi myTama) {
-		System.out.println("(1)ROUGE");
-		System.out.println("(2)BLEU");
-		System.out.println("(3)VERT");
-		System.out.println("(4)VIOLET");
-		System.out.println("\t\t\t\t\t\t\t(5)RETOUR");
+		System.out.println("\n\n\n\n\n\n\n"); // 7+1
+		System.out.println("\t|(1)ROUGE\n"); // 1+1
+		System.out.println("\t|(2)BLEU\n"); // 1+1
+		System.out.println("\t|(3)VERT\n"); // 1+1
+		System.out.println("\t|(4)VIOLET"); // 1
+		System.out.println("\n\n\n\n\n\n\n"); // 7+1
+		System.out.println("\t\t\t\t\t\t\t   (5)RETOUR"); // total : 23
 	}
 
 	/**
@@ -696,25 +671,7 @@ public class Game {
 	 */
 	public static void makeSport(Tamagotchi myTama) {
 
-		for (int i = 0; i < 3; i++) {
-			clearAndTitle();
-			menuTop();
-			Draw.sport1();
-			menuBot();
-
-			Utils.sleep(800);
-			clearAndTitle();
-			menuTop();
-			Draw.sport2();
-			menuBot();
-
-			Utils.sleep(800);
-			clearAndTitle();
-			menuTop();
-			Draw.sport3();
-			menuBot();
-			Utils.sleep(800);
-		}
+		myTama.drawSport();
 		myTama.setCounterEnergy(-2);
 		displayMenu(myTama);
 	}
@@ -725,40 +682,7 @@ public class Game {
 	 */
 	public static void walkAround(Tamagotchi myTama) {
 
-		clearAndTitle();
-		menuWalkAroundInProgress();
-		Draw.walkAround1();
-		menuWalkAroundInProgress();
-
-		Utils.sleep(800);
-		clearAndTitle();
-		menuWalkAroundInProgress();
-		Draw.walkAround2();
-		menuWalkAroundInProgress();
-
-		clearAndTitle();
-		menuWalkAroundInProgress();
-		Draw.walkAround3();
-		menuWalkAroundInProgress();
-
-		Utils.sleep(800);
-		clearAndTitle();
-		menuWalkAroundInProgress();
-		Draw.walkAround4();
-		menuWalkAroundInProgress();
-
-		Utils.sleep(800);
-		clearAndTitle();
-		menuWalkAroundInProgress();
-		Draw.walkAround5();
-		menuWalkAroundInProgress();
-
-		Utils.sleep(800);
-		clearAndTitle();
-		menuWalkAroundInProgress();
-		Draw.walkAroundEmpty();
-		menuWalkAroundInProgress();
-		Utils.sleep(800);
+		myTama.drawWalkAround();
 
 		myTama.findFriend();
 		
@@ -767,7 +691,6 @@ public class Game {
 		if (!myTama.isMask()) {
 			myTama.setSick(true);
 		}
-		
 		
 		Utils.sleep(1200);
 		displayMenu(myTama);

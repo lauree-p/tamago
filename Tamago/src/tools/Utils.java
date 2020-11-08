@@ -9,10 +9,6 @@ import java.util.concurrent.TimeUnit;
  */
 public class Utils {
 
-	public Utils() {
-		
-	}
-
 	/**
 	 * 
 	 * @param x
@@ -69,4 +65,80 @@ public class Utils {
 			e.printStackTrace();
 		}
 	}
+	
+	public static String[] femaleFirstNameTab = {
+			"Câline",
+			"Chipie",
+			"Chouinette",
+			"Choupinette",
+			"Coquine",
+			"Filoutte",
+			"Frimouse",
+			"Fripouille",
+			"Artichaut",
+			"Fantomette",
+			"Foulkan",
+			"Gelatine",
+			"Grisebouille",
+			"Lulubelle",
+			"Miaulette",
+			"Nicotine",
+			"Pimprenelle",
+			"Pitot",
+			"Ristouflette",
+			"Soquette",
+			"Tapisserie",
+			"Troufinette",
+			"Zézette",
+			"Zibouille",
+			"Gribouille",
+			"Altesse",
+			"Celeste",
+			 "Duchesse",
+			"Galatée",
+			"Galaxie",
+			"Gracieuse",
+			"Joconde",
+			"Lionne"};
+	
+	public static String[] maleFirstNameTab = {
+			"Ralph"
+			,"Raphaël"
+			,"Rémi"
+			,"Robin"
+			,"Rocky"
+			,"Rodolphe"
+			,"Romeo"
+			,"Ruben"
+			,"Rufus"
+			,"Ryan"
+			,"Android"
+			,"Apple"
+			,"Giga"
+			,"Google"
+			,"Java"
+			,"Pixel"
+			,"Siri"
+			,"Virus"
+			,"Widget"
+			,"Wifi"
+			,"Aladin"
+			,"Baloo"
+			,"Dingo"
+			,"Dumbo"
+			,"Jafar"
+			,"Flash"
+			,"Hercule"
+			,"Merlin"
+			,"Mickey"
+			,"Nemo"
+			,"Pinocchio"
+			,"Pluto"
+			,"Rémy"
+			,"Simba"
+			,"Sully"
+			,"Tarzan"
+			,"Tigrou"
+			,"Winnie"
+			,"Woody"};
 }
