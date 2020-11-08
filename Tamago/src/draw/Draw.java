@@ -18,7 +18,7 @@ public class Draw {
 	 * 
 	 */
 	public static void wash2() {
-		for (int i =0 ; i < 6; i++) {
+		for (int i =0 ; i < 6; i++) { 
 			System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 		}
 		for (int i =0 ; i < 17; i++) {
